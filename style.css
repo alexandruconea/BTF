@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* --- Reset și font global --- */
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Roboto, sans-serif;
+    font-size: 14px;
+    height: 100%;
+    width: 100%;
+    background-color: #1e1e1e;
+    color: #dcdcdc;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    user-select: none;
+}
+
+/* --- Titlebar custom --- */
+#titlebar {
+    height: 30px;
+    background-color: #252525;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    -webkit-app-region: drag;
+    padding: 0 10px;
+    color: #dcdcdc;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+#window-controls {
+    display: flex;
+    gap: 5px;
+    -webkit-app-region: no-drag;
+}
+
+#window-controls button {
+    width: 30px;
+    height: 22px;
+    border: none;
+    background: #50987b;
+    color: black;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 0;
+}
+
+#window-controls button:hover {
+    background: #387058;
+}
+
+/* --- Content-ul aplicației --- */
+#content {
+    display: flex;
+    flex: 1; /* ocupă tot spațiul rămas sub titlebar */
+    overflow: hidden;
+}
+
+/* --- Lista din stânga --- */
+#npc-list {
+    width: 130px;
+    background-color: #1e1e1e;
+    border-right: 1px solid #444;
+    overflow-y: auto;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#npc-list li {
+    padding: 9px 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+#npc-list li:hover {
+    background-color: #50987b;
+    color: #ffffff;
+}
+
+#npc-list li.selected {
+    background-color: #387058;
+    color: #ffffff;
+}
+
+/* --- Container principal pentru info + fit --- */
+#fit-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #1e1e1e;
+    padding: 10px;
+    overflow: hidden;
+    gap: 10px;
+}
+
+/* --- Secțiunea de Info --- */
+#info-text {
+    background-color: #252525;
+    color: #dcdcdc;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    line-height: 1.4;
+    white-space: pre-wrap;
+}
+
+/* --- Secțiunea FIT (bloc de cod) --- */
+#code-block {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.textarea-wrapper {
+    position: relative;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+#fit-text {
+    flex: 1;
+    resize: none;
+    border: none;
+    outline: none;
+    background-color: #2b2b2b;
+    color: #dcdcdc;
+    font-family: monospace;
+    font-size: 13px;
+    border-radius: 6px;
+    padding: 12px;
+    padding-right: 40px; /* spațiu pentru buton */
+    overflow-y: auto;
+    white-space: pre;
+}
+
+/* --- Buton Copy în colțul textarea --- */
+#copy-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: #50987b;
+    border: none;
+    border-radius: 4px;
+    padding: 4px 8px;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+#copy-btn:hover {
+    background: #387058;
+}
+
+/* --- Scrollbar custom --- */
+#npc-list::-webkit-scrollbar,
+#fit-text::-webkit-scrollbar {
+    width: 10px;
+}
+
+#npc-list::-webkit-scrollbar-thumb,
+#fit-text::-webkit-scrollbar-thumb {
+    background-color: #50987b;
+    border-radius: 5px;
+}
+
+#npc-list::-webkit-scrollbar-track,
+#fit-text::-webkit-scrollbar-track {
+    background-color: #2e2e2e;
+}
+
+/* --- Footer --- */
+#app-footer {
+    background-color: #222;
+    color: #dcdcdc;
+    text-align: center;
+    padding: 8px 0;
+    font-size: 13px;
+    border-top: 1px solid #444;
+}
+
+/* --- Asigură layout flex corect --- */
+body > #content {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BTF</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="titlebar">
+        <span>BTF</span>
+        <div id="window-controls">
+            <button id="minimize">–</button>
+            <button id="close">×</button>
+        </div>
+    </div>
+
+    <div id="content">
+        <ul id="npc-list"></ul>
+        <div id="fit-container">
+            <div id="info-text">Select an NPC from the list</div>
+            <div id="code-block">
+                <div class="textarea-wrapper">
+                    <textarea id="fit-text" readonly></textarea>
+                    <button id="copy-btn">📋</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer id="app-footer">
+        <p>V1.0. 2025 BTF. Created by Barset.</p>
+    </footer>
+
+    <script src="renderer.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+{
+  "name": "eve-fits-electron",
+  "version": "1.0.0",
+  "description": "EVE Online - Burner Tactics & Fits",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron --no-sandbox .",
+    "dist": "electron-builder --linux AppImage"
+  },
+  "devDependencies": {
+    "electron": "^30.5.1",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.alex.evefits",
+    "productName": "EVE Fits Electron",
+    "directories": {
+      "output": "dist"
+    },
+    "linux": {
+      "icon": "icon.png",
+      "target": [
+        "AppImage",
+        "deb"
+      ],
+      "category": "Utility"
+    }
+  }
+}
